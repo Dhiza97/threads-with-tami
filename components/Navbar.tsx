@@ -56,20 +56,20 @@ const Navbar: React.FC = () => {
     <nav
       className={`flex justify-between items-center w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 main-nav z-50 ${
         isScroll
-          ? "bg-[#E2DF4C] text-[var(--color-deepForest)] bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20"
+          ? "bg-white text-[var(--color-deepForest)] bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20"
           : ""
       }`}
     >
       <Link href={""}>
-        <Image src={"/twt_logo1.png"} alt="Logo" className="w-16" width={70} height={70} />
+        <Image src={"/twt_logo1.png"} alt="Logo" className="w-16" width={60} height={60} />
       </Link>
 
       {/* Desktop Menu */}
       <ul
-        className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
+        className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 text-[var(--color-deepForest)] ${
           isScroll
             ? ""
-            : "bg-[#E2DF4C] text-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"
+            : "bg-[var(--color-warmBeige)] text-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"
         }`}
       >
         {[
@@ -80,8 +80,8 @@ const Navbar: React.FC = () => {
         ].map((item) => (
           <li
             key={item.path}
-            className={`relative hover:text-primaryColor ${
-              pathname === item.path ? "text-primaryColor after:w-full" : ""
+            className={`relative text-[var(--color-deepForest)] ${
+              pathname === item.path ? "after:w-full" : ""
             }`}
           >
             <Link href={item.path}>{item.name}</Link>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -6,4 +7,9 @@
   --color-deepForest: #2C3E3A;
   --color-darkCharcoal: #2D2D2D;
   --color-softWhite: #F8F6F1;
+  --color-lightGreen: #BAE8C4;
+}
+
+* {
+  font-family: var('--font-lora');
 }
