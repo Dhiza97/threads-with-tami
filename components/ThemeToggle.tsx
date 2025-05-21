@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { PiMoonLight, PiSunLight } from "react-icons/pi";
 
 export const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -8,9 +9,9 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="text-sm font-lora bg-mutedSage px-3 py-1 rounded"
+      className="text-2xl transition-colors duration-300 cursor-pointer"
     >
-      {theme === "dark" ? "Light Mode" : "Dark Mode"}
+      {theme === "dark" ? <PiSunLight /> : <PiMoonLight />}
     </button>
   );
 };

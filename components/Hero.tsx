@@ -1,12 +1,16 @@
 import { playfairDisplay } from "@/fonts";
+import Image from "next/image";
 import React from "react";
 
 const Hero = () => {
   return (
     <div className="hero min-h-screen px-5 lg:px-8 xl:px-[8%] py-4">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+        <Image
+          src="/hero-img.jpg"
+          alt="hero section image"
+          width={500}
+          height={500}
           className="max-w-sm rounded-lg shadow-2xl"
         />
 

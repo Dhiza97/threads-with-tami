@@ -3,11 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { CiDark, CiUser } from "react-icons/ci";
-import { MdKeyboardArrowDown } from "react-icons/md";
-import { PiHamburger } from "react-icons/pi";
-import { TfiClose } from "react-icons/tfi";
+import React from "react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const Navbar: React.FC = () => {
@@ -57,7 +53,7 @@ const Navbar: React.FC = () => {
             <Image
               src={"/twt_logo1.png"}
               alt="Logo"
-              className="w-16"
+              className="w-12"
               width={60}
               height={60}
             />
@@ -79,8 +75,10 @@ const Navbar: React.FC = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end flex gap-6">
+
           <ThemeToggle />
+
           <a className="px-4 py-2 rounded-full btn liquid font-light">
             Sign Up
           </a>
