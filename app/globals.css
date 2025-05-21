@@ -1,15 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
+@plugin "daisyui";
 
 @theme {
-  --color-warmBeige: #EDE3D2;
-  --color-mutedSage: #A8B5A2;
-  --color-deepForest: #2C3E3A;
-  --color-darkCharcoal: #2D2D2D;
-  --color-softWhite: #F8F6F1;
+  --color-warmBeige: #EDE3D2; /* background color */
+  --color-mutedSage: #A8B5A2; /* light green */
+  --color-deepForest: #2C3E3A; /* text green color */
+  --color-darkCharcoal: #2D2D2D; /* text black color */
+  --color-softWhite: #F8F6F1; /* background color */
   --color-lightGreen: #BAE8C4;
 }
 
 * {
   font-family: var('--font-lora');
+}
+
+body {
+  background-color: var(--color-softWhite);
+  color: var(--color-darkCharcoal);
+}
+
+.main-nav li a {
+  font-size: 1rem;
 }

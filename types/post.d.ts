@@ -1,24 +1,25 @@
 export type TPostModel = {
-    postId: string;
     title: string;
     content: string;
-    author: string;
     coverImage: string;
-    createdAt: Date;
-    updatedAt: Date;
+    author: {
+        name: string;
+        email: string;
+        image: string;
+    }
     published: boolean;
     tags: string[];
-    likedBy: string[];
+    likedBy: Types.ObjectId[];
     comments: TCommentModel[];
     views: number;
     isFeatured: boolean;
     isDraft: boolean;
+    createdAt: Date;
+    updatedAt: Date;
 }
 
 export type TCommentModel = {
     id: string;
-    postId: string; // ID of the post the comment belongs to
-    userId: string; // ID of the user who made the comment
-    content: string;
+    commentContent: string;
     createdAt: Date;
 }
