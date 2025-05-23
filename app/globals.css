@@ -20,6 +20,16 @@ body {
   color: var(--color-darkCharcoal);
 }
 
+[data-theme='dark'],
+[data-theme='dark'] body {
+  color: var(--color-softWhite);
+  background: var(--color-darkCharcoal);
+}
+
+[data-theme='dark'] .hero h1 {
+  color: var(--color-softWhite);
+}
+
 .main-nav li a {
   font-size: 1rem;
 }

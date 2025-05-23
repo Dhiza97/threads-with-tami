@@ -3,14 +3,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
+import { useTheme } from "next-themes";
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    // Prevent mismatches between SSR and client
+    return null;
+  }
 
   return (
-    <nav className='flex justify-between items-center w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 main-nav z-50'>
+    <nav className="flex justify-between items-center w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 main-nav z-50">
       <div className="navbar bg-base-100 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
@@ -49,7 +61,15 @@ const Navbar: React.FC = () => {
             </ul>
           </div>
 
-          <Link href={""}>
+          {theme === "dark" ? (
+            <Image
+              src={"/twt_logo_light.png"}
+              alt="Logo"
+              className="w-12"
+              width={60}
+              height={60}
+            />
+          ) : (
             <Image
               src={"/twt_logo1.png"}
               alt="Logo"
@@ -57,7 +77,7 @@ const Navbar: React.FC = () => {
               width={60}
               height={60}
             />
-          </Link>
+          )}
         </div>
 
         <div className="navbar-center hidden lg:flex">
@@ -76,10 +96,15 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
         <div className="navbar-end flex gap-6">
-
           <ThemeToggle />
 
-          <a className="px-4 py-2 rounded-full btn liquid font-light">
+          <a
+            className={
+              theme === "dark"
+                ? "px-4 py-2 rounded-full btn liquid font-light text-lightGreen border-lightGreen"
+                : "px-4 py-2 rounded-full btn liquid font-light"
+            }
+          >
             Sign Up
           </a>
         </div>
