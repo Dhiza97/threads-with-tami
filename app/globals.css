@@ -8,13 +8,13 @@
   --color-deepForest: #2C3E3A; /* text green color */
   --color-darkCharcoal: #2D2D2D; /* text black color */
   --color-softWhite: #F8F6F1; /* background color */
-  --color-lightGreen: #BAE8C4;
+  --color-lightGreen: #BAE8C4; /* button color */
 }
 
 [data-theme='dark'] {
   --color-bodyColor: #2D2D2D; /* background color */
   --color-textColor: #F8F6F1; /* text color */
-  --color-btnColor: #BAE8C4; /* button green */
+  --color-btnColor: #BAE8C4; /* button color */
 }
 
 * {

@@ -15,13 +15,17 @@ const Hero = () => {
         />
 
         <div>
-          <h1 className="text-4xl font-semibold leading-tight text-[var(--color-deepForest)] -z-10"
-          style={playfairDisplay.style}>
+          <h1
+            className="text-4xl font-semibold leading-tight text-[var(--color-deepForest)] -z-10"
+            style={playfairDisplay.style}
+          >
             Welcome to Threads With Tami, your go-to source for practical
             insights, inspiration, and tips for faith-centered living.
           </h1>
 
-          <button className="btn btn-xl btn-outline px-4 py-1 rounded-full mt-10 [color:var(--color-btnColor)] font-light">Start Here!</button>
+          <button className="btn btn-xl btn-outline px-4 py-1 rounded-full mt-8 [color:var(--color-btnColor)] font-light">
+            Start Here!
+          </button>
         </div>
       </div>
     </div>
