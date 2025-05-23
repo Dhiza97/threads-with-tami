@@ -11,6 +11,12 @@
   --color-lightGreen: #BAE8C4;
 }
 
+[data-theme='dark'] {
+  --color-bodyColor: #2D2D2D; /* background color */
+  --color-textColor: #F8F6F1; /* text color */
+  --color-btnColor: #BAE8C4; /* button green */
+}
+
 * {
   font-family: var('--font-lora');
 }
@@ -20,7 +26,6 @@ body {
   color: var(--color-darkCharcoal);
 }
 
-[data-theme='dark'],
 [data-theme='dark'] body {
   color: var(--color-softWhite);
   background: var(--color-darkCharcoal);

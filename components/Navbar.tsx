@@ -17,7 +17,6 @@ const Navbar: React.FC = () => {
   }, []);
 
   if (!mounted) {
-    // Prevent mismatches between SSR and client
     return null;
   }
 

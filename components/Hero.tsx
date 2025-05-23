@@ -20,7 +20,8 @@ const Hero = () => {
             Welcome to Threads With Tami, your go-to source for practical
             insights, inspiration, and tips for faith-centered living.
           </h1>
-          <button className="btn btn-primary mt-10">Get Started</button>
+
+          <button className="btn btn-xl btn-outline px-4 py-1 rounded-full mt-10 [color:var(--color-btnColor)] font-light">Start Here!</button>
         </div>
       </div>
     </div>
