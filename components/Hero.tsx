@@ -19,7 +19,7 @@ const Hero = () => {
             className="text-4xl font-semibold leading-tight text-[var(--color-deepForest)] -z-10"
             style={playfairDisplay.style}
           >
-            Welcome to Threads With Tami, your go-to source for practical
+            Welcome to <span className="text-lightGreen">Threads With Tami</span>, your go-to source for practical
             insights, inspiration, and tips for faith-centered living.
           </h1>
 
