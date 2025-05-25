@@ -3,12 +3,25 @@ import mongoose, { Schema } from "mongoose";
 import User from "./user.model";
 
 const PostModel = new Schema<TPostModel>({
+  slug: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   title: {
+    type: String,
+    required: true,
+  },
+  excerpt: {
     type: String,
     required: true,
   },
   content: {
     type: String,
+    required: true,
+  },
+  category: {
+    type: [String],
     required: true,
   },
   coverImage: {
@@ -33,10 +46,11 @@ const PostModel = new Schema<TPostModel>({
   tags: {
     type: [String],
   },
-  likedBy: {
+  likedBy: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: User,
-  },
+    default: [],
+  }],
   comments: [
     {
       id: {

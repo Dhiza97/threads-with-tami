@@ -1,6 +1,9 @@
 export type TPostModel = {
+    slug: string;
     title: string;
+    excerpt: string;
     content: string;
+    category: string[];
     coverImage: string;
     author: {
         name: string;
