@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import Navbar from "@/components/Navbar";
+import LoginModal from "@/components/LoginModal";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,6 +23,7 @@ export default function RootLayout({
           enableSystem={true}
         >
           {children}
+          <LoginModal />
         </ThemeProvider>
       </body>
     </html>

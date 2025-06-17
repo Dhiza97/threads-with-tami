@@ -97,15 +97,21 @@ const Navbar: React.FC = () => {
         <div className="navbar-end flex gap-6">
           <ThemeToggle />
 
-          <a
+          <button
             className={
               theme === "dark"
                 ? "px-4 py-2 rounded-full btn liquid font-light text-lightGreen border-lightGreen"
                 : "px-4 py-2 rounded-full btn liquid font-light"
             }
+            onClick={() => {
+              const dialog = document.getElementById(
+                "my_modal_3"
+              ) as HTMLDialogElement | null;
+              if (dialog) dialog.showModal();
+            }}
           >
             Sign Up
-          </a>
+          </button>
         </div>
       </div>
     </nav>

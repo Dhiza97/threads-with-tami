@@ -1,9 +1,10 @@
-import Category from "@/components/Category";
+import RecentPost from "@/components/RecentPost";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 async function getPosts() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`, {
     cache: "no-store",
   });
   if (!res.ok) throw new Error("Failed to fetch posts");
@@ -18,7 +19,9 @@ export default async function Home() {
       <Navbar />
       <Hero />
       <hr />
-      <Category posts={posts} />
+      <RecentPost posts={posts} />
+      <hr />
+      <Footer />
     </>
   );
 }

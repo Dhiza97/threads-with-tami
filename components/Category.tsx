@@ -1,19 +1,24 @@
-import React from 'react'
-import PostCard from './PostCard'
-import { TPostModel } from '@/types/post'
+import React from "react";
 
-type CategoryProps = {
-  posts: TPostModel[];
+const Category = () => {
+  return (
+    <div>
+      <div className="card bg-base-100 image-full w-96 shadow-sm">
+        <figure>
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt="Shoes"
+          />
+        </figure>
+        <div className="card-body text-center">
+          <h2 className="card-title">Category Name</h2>
+          <p>
+            Category description
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
-const Category: React.FC<CategoryProps> = ({ posts }) => {
-  return (
-    <div className='px-5 lg:px-8 xl:px-[8%] py-4'>
-      {posts.map((post) => (
-        <PostCard key={post.slug} post={post} />
-      ))}
-    </div>
-  )
-}
-
-export default Category
+export default Category;
