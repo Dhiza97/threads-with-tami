@@ -10,14 +10,14 @@ type PostCardProps = {
 const PostCard: React.FC<PostCardProps> = ({ post }) => (
   <div
     className="
-      rounded-lg shadow-lg bg-white dark:bg-gray-800 
-      p-4 mb-6 hover:shadow-2xl hover:-translate-y-1 transition cursor-pointer
-      flex flex-col
-      w-full sm:w-[320px] md:w-[350px] lg:w-[370px]
-      h-[420px] sm:h-[420px] md:h-[440px] lg:h-[460px]
-      max-w-full
-      overflow-hidden
-    "
+    rounded-lg shadow-lg bg-white dark:bg-gray-800 
+    p-4 mb-6 hover:shadow-2xl hover:-translate-y-1 transition cursor-pointer
+    flex flex-col
+    w-full sm:w-[320px] md:w-[350px] lg:w-[370px]
+    sm:h-[420px] md:h-[440px] lg:h-[460px]
+    max-w-full
+    overflow-hidden
+  "
     style={{ minWidth: 0 }}
   >
     {/* Cover image */}
@@ -64,7 +64,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => (
       </div>
 
       {/* Title, excerpt & tags */}
-      <h2 className="text-2xl font-extralight mb-2 truncate">{post.title}</h2>
+      <h2 className="text-2xl font-extralight mb-2">{post.title}</h2>
       <p className="text-sm text-gray-600 dark:text-gray-300 mb-2 line-clamp-2">
         {post.excerpt}
       </p>
