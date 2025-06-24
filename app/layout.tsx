@@ -22,6 +22,7 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem={true}
         >
+          <Navbar />
           {children}
           <LoginModal />
         </ThemeProvider>

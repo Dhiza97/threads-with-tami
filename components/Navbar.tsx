@@ -47,11 +47,11 @@ const Navbar: React.FC = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Home</a>
+                <a href="/">Home</a>
               </li>
 
               <li>
-                <a>Posts</a>
+                <a href="/posts">Posts</a>
               </li>
 
               <li>
@@ -82,11 +82,11 @@ const Navbar: React.FC = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Home</a>
+              <a href="/">Home</a>
             </li>
 
             <li>
-              <a>Posts</a>
+              <a href="/posts">Posts</a>
             </li>
 
             <li>

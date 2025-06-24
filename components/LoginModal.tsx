@@ -35,7 +35,6 @@ const LoginModal = () => {
                 id="username"
                 type="email"
                 placeholder="Email Address"
-                required
               />
             </div>
             <div className="mb-6">
@@ -47,7 +46,6 @@ const LoginModal = () => {
                 id="password"
                 type="password"
                 placeholder="***********"
-                required
               />
             </div>
             <div className="flex items-center justify-between">
