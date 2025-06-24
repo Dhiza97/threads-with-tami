@@ -16,6 +16,10 @@ const PostModel = new Schema<TPostModel>({
     type: String,
     required: true,
   },
+  summary: {
+    type: String,
+    required: true,
+  },
   content: {
     type: String,
     required: true,

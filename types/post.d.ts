@@ -2,6 +2,7 @@ export type TPostModel = {
     slug: string;
     title: string;
     excerpt: string;
+    summary: string;
     content: string;
     category: string[];
     coverImage: string;
