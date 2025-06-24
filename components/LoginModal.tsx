@@ -6,18 +6,6 @@ import { FcGoogle } from "react-icons/fc";
 const LoginModal = () => {
   return (
     <div>
-      {/* You can open the modal using document.getElementById('ID').showModal() method */}
-      <button
-        className="btn"
-        onClick={() => {
-          const dialog = document.getElementById(
-            "my_modal_3"
-          ) as HTMLDialogElement | null;
-          if (dialog) dialog.showModal();
-        }}
-      >
-        open modal
-      </button>
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box">
           <form method="dialog">

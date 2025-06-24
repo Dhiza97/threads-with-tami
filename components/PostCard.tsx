@@ -10,7 +10,7 @@ type PostCardProps = {
 const PostCard: React.FC<PostCardProps> = ({ post }) => (
   <div
     className="
-    rounded-lg shadow-lg bg-white dark:bg-gray-800 
+    rounded-lg shadow-lg  dark:bg-gray-800 
     p-4 mb-6 hover:shadow-2xl hover:-translate-y-1 transition cursor-pointer
     flex flex-col
     w-full sm:w-[320px] md:w-[350px] lg:w-[370px]
