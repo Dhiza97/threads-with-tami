@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
               if (dialog) dialog.showModal();
             }}
           >
-            Sign Up
+            Sign In
           </button>
         </div>
       </div>
