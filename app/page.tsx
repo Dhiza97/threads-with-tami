@@ -2,6 +2,7 @@ import RecentPost from "@/components/RecentPost";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ParallaxQuote from "@/components/ParallaxQuote";
 
 async function getPosts() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`, {
@@ -18,9 +19,8 @@ export default async function Home() {
     <>
       <Navbar />
       <Hero />
-      <hr />
       <RecentPost posts={posts} />
-      <hr />
+      <ParallaxQuote />
       <Footer />
     </>
   );

@@ -17,6 +17,10 @@
   --color-btnColor: #BAE8C4; /* button color */
 }
 
+[data-theme='dark'] .parallax-quote-bg {
+  background-color: #2D2D2D !important;
+}
+
 * {
   font-family: var('--font-lora');
 }
