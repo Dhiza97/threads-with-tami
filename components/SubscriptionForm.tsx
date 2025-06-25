@@ -37,7 +37,7 @@ export default function SubscriptionForm() {
 
   return (
     <div className="max-w-3xl mx-auto p-6 text-center py-40">
-      <h2 className="text-4xl mb-2">Join the Conversations</h2>
+      <h2 className="text-4xl font-light mb-2">Join the Conversations</h2>
       <p className="text-gray-600 mb-8">Get the content you need, just when you need it</p>
 
       {!submitted ? (

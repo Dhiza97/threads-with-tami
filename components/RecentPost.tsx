@@ -12,7 +12,7 @@ type RecentPostProps = {
 const RecentPost: React.FC<RecentPostProps> = ({ posts, loading }) => {
   return (
     <div className="px-5 lg:px-8 xl:px-[8%] py-20">
-      <h2 className="text-4xl mb-4">Recent Posts</h2>
+      <h2 className="text-[48px] font-light mb-4">Recent Posts</h2>
       <p className="text-gray-600 dark:text-gray-300 mb-6">
         Discover the latest articles and insights from our community.
       </p>
