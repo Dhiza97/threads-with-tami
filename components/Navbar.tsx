@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
               </li>
 
               <li>
-                <a href="/posts" className="font-light">Posts</a>
+                <a href="/posts" className="font-light">Blog</a>
               </li>
 
               <li>
@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
             </li>
 
             <li>
-              <a href="/posts" className="font-light">Posts</a>
+              <a href="/posts" className="font-light">Blog</a>
             </li>
 
             <li>

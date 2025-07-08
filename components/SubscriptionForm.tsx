@@ -1,26 +1,24 @@
-'use client';
+"use client";
 
-import { useTheme } from 'next-themes';
-import { useState } from 'react';
+import { useTheme } from "next-themes";
+import { useState } from "react";
 
 export default function SubscriptionForm() {
   const { theme, setTheme } = useTheme();
   const [form, setForm] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
+    firstName: "",
+    lastName: "",
+    email: "",
     consent: false,
   });
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
-    setForm(prev => ({
+    setForm((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -28,54 +26,92 @@ export default function SubscriptionForm() {
     e.preventDefault();
     if (form.firstName && form.lastName && form.email && form.consent) {
       // Send form data here (e.g. API call)
-      console.log('Form Submitted:', form);
+      console.log("Form Submitted:", form);
       setSubmitted(true);
     } else {
-      alert('Please fill all required fields and give consent.');
+      alert("Please fill all required fields and give consent.");
     }
   };
 
   return (
     <div className="max-w-3xl mx-auto p-6 text-center py-40">
       <h2 className="text-4xl font-light mb-2">Join the Conversations</h2>
-      <p className="text-gray-600 mb-8">Get the content you need, just when you need it</p>
+      <p className="text-gray-600 mb-8">
+        Get the content you need, just when you need it
+      </p>
 
       {!submitted ? (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-1">
-              <label className={theme === "dark" ? "block text-left text-sm mb-1 text-lightGreen" : "block text-left text-sm mb-1"}>First Name *</label>
+              <label
+                className={
+                  theme === "dark"
+                    ? "block text-left text-sm mb-1 text-lightGreen"
+                    : "block text-left text-sm mb-1"
+                }
+              >
+                First Name *
+              </label>
               <input
                 type="text"
                 name="firstName"
                 value={form.firstName}
                 onChange={handleChange}
-                className={theme === "dark" ? "w-full border-b border-lightGreen outline-none py-2" : "w-full border-b border-darkCharcoal outline-none py-2"}
+                className={
+                  theme === "dark"
+                    ? "w-full border-b border-lightGreen outline-none py-2"
+                    : "w-full border-b border-darkCharcoal outline-none py-2"
+                }
                 required
               />
             </div>
 
             <div className="flex-1">
-              <label className={theme === "dark" ? "block text-left text-sm mb-1 text-lightGreen" : "block text-left text-sm mb-1"}>Last Name *</label>
+              <label
+                className={
+                  theme === "dark"
+                    ? "block text-left text-sm mb-1 text-lightGreen"
+                    : "block text-left text-sm mb-1"
+                }
+              >
+                Last Name *
+              </label>
               <input
                 type="text"
                 name="lastName"
                 value={form.lastName}
                 onChange={handleChange}
-                className={theme === "dark" ? "w-full border-b border-lightGreen outline-none py-2" : "w-full border-b border-darkCharcoal outline-none py-2"}
+                className={
+                  theme === "dark"
+                    ? "w-full border-b border-lightGreen outline-none py-2"
+                    : "w-full border-b border-darkCharcoal outline-none py-2"
+                }
                 required
               />
             </div>
           </div>
 
           <div>
-            <label className={theme === "dark" ? "block text-left text-sm mb-1 text-lightGreen" : "block text-left text-sm mb-1"}>Email *</label>
+            <label
+              className={
+                theme === "dark"
+                  ? "block text-left text-sm mb-1 text-lightGreen"
+                  : "block text-left text-sm mb-1"
+              }
+            >
+              Email *
+            </label>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              className={theme === "dark" ? "w-full border-b border-lightGreen outline-none py-2" : "w-full border-b border-darkCharcoal outline-none py-2"}
+              className={
+                theme === "dark"
+                  ? "w-full border-b border-lightGreen outline-none py-2"
+                  : "w-full border-b border-darkCharcoal outline-none py-2"
+              }
               required
             />
           </div>
@@ -86,7 +122,12 @@ export default function SubscriptionForm() {
               name="consent"
               checked={form.consent}
               onChange={handleChange}
-              className={"appearance-none w-4 h-4 border" + (theme === "dark" ? " border-lightGreen" : " border-darkCharcoal")}
+              className={
+                "appearance-none w-4 h-4 border" +
+                (theme === "dark"
+                  ? " border-lightGreen bg-lightGreen"
+                  : " border-darkCharcoal bg-darkCharcoal")
+              }
               required
             />
             <label className="text-sm text-left">

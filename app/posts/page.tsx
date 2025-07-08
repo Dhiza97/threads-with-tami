@@ -3,7 +3,7 @@ import React from 'react'
 const posts = () => {
   return (
     <div className='px-5 lg:px-8 xl:px-[8%] py-20'>
-        <h1 className="text-[48px] font-light mt-10">Posts</h1>
+        <h1 className="text-[48px] font-light mt-10">Blog</h1>
         <p className="text-gray-600 mb-8">
             This is the posts page. You can add your posts here.
         </p>
