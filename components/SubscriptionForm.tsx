@@ -123,10 +123,10 @@ export default function SubscriptionForm() {
               checked={form.consent}
               onChange={handleChange}
               className={
-                "appearance-none w-4 h-4 border" +
+                "w-4 h-4 border" +
                 (theme === "dark"
-                  ? " border-lightGreen bg-lightGreen"
-                  : " border-darkCharcoal bg-darkCharcoal")
+                  ? " border-lightGreen accent-lightGreen"
+                  : " border-darkCharcoal accent-darkCharcoal")
               }
               required
             />
