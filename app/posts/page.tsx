@@ -1,22 +1,56 @@
-import React from 'react'
+"use client";
+
+import AllPost from "@/components/AllPost";
+import { TPostModel } from "@/types/post";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { CiSearch } from "react-icons/ci";
 
 const posts = () => {
-  return (
-    <div className='px-5 lg:px-8 xl:px-[8%] py-20'>
-        <h1 className="text-[48px] font-light mt-10">Blog</h1>
-        <p className="text-gray-600 mb-8">
-            This is the posts page. You can add your posts here.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {/* Post cards will go here */}
-            {/* Example post card */}
-            <div className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
-            <h2 className="text-xl font-semibold mb-2">Post Title</h2>
-            <p className="text-gray-700">This is a brief description of the post.</p>
-            </div>
-        </div>
-    </div>
-  )
-}
+  const [active, setActive] = useState(false);
+  const [posts, setPosts] = useState<TPostModel[]>([]);
+  const [loading, setLoading] = useState(true);
 
-export default posts
+  useEffect(() => {
+    fetch("/api/post")
+      .then((res) => res.json())
+      .then((data) => setPosts(data))
+      .finally(() => setLoading(false));
+  }, []);
+
+
+  return (
+    <div className="px-5 lg:px-8 xl:px-[8%] py-20 min-h-screen">
+      <h1 className="text-[48px] font-light mt-10">Blog</h1>
+
+      <div className="mt-8 mb-4 flex justify-between items-center">
+        <Link href={"/posts"} className="text-sm">
+          All Posts
+        </Link>
+
+        {/* animated expandable search bar */}
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search posts..."
+            onClick={() => setActive(true)}
+            className={`rounded-none border-0 border-b text-sm transition-all duration-200 px-4 py-2 w-full max-w-xs focus:outline-none ${
+              active ? "border-b-1 border" : "border-b-0"
+            }`}
+          />
+          <button
+            type="button"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500"
+            onClick={() => setActive(true)}
+          >
+            <CiSearch />
+          </button>
+        </div>
+      </div>
+
+      <AllPost posts={posts} loading={false} />
+    </div>
+  );
+};
+
+export default posts;

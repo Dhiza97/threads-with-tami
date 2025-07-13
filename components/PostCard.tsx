@@ -11,7 +11,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => (
   <div
     className="
     rounded-lg shadow-lg dark:bg-gray-800 
-    p-4 mb-6 hover:shadow-2xl hover:-translate-y-1 transition cursor-pointer
+    p-0 mb-6 hover:shadow-2xl hover:-translate-y-1 transition cursor-pointer
     flex flex-col
     w-full sm:w-[320px] md:w-[350px] lg:w-[370px]
     sm:h-[420px] md:h-[440px] lg:h-[460px]
@@ -29,7 +29,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => (
       />
     )}
 
-    <div className="mt-4 flex flex-col flex-1 overflow-hidden">
+    <div className="mt-4 flex flex-col flex-1 overflow-hidden px-4">
       {/* Author, date & read time */}
       <div className="flex items-center gap-2 mb-2">
         <div>
@@ -81,18 +81,20 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => (
       </div>
     </div>
 
-    <hr className="text-gray-300" />
+    <div className="px-4 pb-1">
+      <hr className="text-gray-300" />
 
-    <div className="flex items-center justify-between mt-2 text-[.7rem]">
-      <p className="">20 views</p>
+      <div className="flex items-center justify-between mt-2 text-[.7rem] pb-4">
+        <p className="">20 views</p>
 
-      <div className="flex items-center gap-2">
-        <span className="flex items-center justify-between gap-1">
-          {post.likedBy.length} <TfiHeart className="text-red-600" />
-        </span>
-        <span className="flex items-center justify-between text-xs ml-2 gap-1">
-          {post.comments.length} <TfiComment />
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="flex items-center justify-between gap-1">
+            {post.likedBy.length} <TfiHeart className="text-red-600" />
+          </span>
+          <span className="flex items-center justify-between text-xs ml-2 gap-1">
+            {post.comments.length} <TfiComment />
+          </span>
+        </div>
       </div>
     </div>
   </div>
