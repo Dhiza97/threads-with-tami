@@ -20,7 +20,7 @@ const RecentPost: React.FC<RecentPostProps> = ({ posts, loading }) => {
         {
           loading
           ? Array.from({ length: 6 }).map((_, i) => <PostCardSkeleton key={i} />)
-          : posts.map((post) => (
+          : posts.slice(0, 6).map((post) => (
             <Link key={post.slug} href={`post/${post.slug}`} className="block">
               <PostCard post={post} />
             </Link>
